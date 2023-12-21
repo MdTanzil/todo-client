@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from './../hooks/useAuth';
-import axios from "axios";
+// import axios from "axios";
 
 const Register = () => {
     const {register:reg,updateUserData} = useAuth()
