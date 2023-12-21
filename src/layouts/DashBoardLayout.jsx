@@ -5,7 +5,7 @@ import { useState } from "react";
 
 
 const DashBoardLayout = () => {
-    const [selectedIndex,setSelectedIndex] = useState(0)
+    const [selectedIndex = 0,setSelectedIndex] = useState(0)
     return (
        <>
        <div>

@@ -4,69 +4,89 @@
     "description": "Write and finalize the project proposal for client review.",
     "deadline": "2023-01-31",
     "priority": "High",
-    "status": "To-Do"
+    "status": "To-Do",
+    "email": "abu@sayed.com",
+    "name": "abusayed"
   },
   {
     "title": "Update Website Content",
     "description": "Review and update the content on the company website.",
     "deadline": "2023-02-15",
     "priority": "Moderate",
-    "status": "Ongoing"
+    "status": "Ongoing",
+    "email": "abu@sayed.com",
+    "name": "abusayed"
   },
   {
     "title": "Attend Team Meeting",
     "description": "Participate in the weekly team meeting to discuss progress and challenges.",
     "deadline": "2023-01-25",
     "priority": "Low",
-    "status": "Completed"
+    "status": "Completed",
+    "email": "abu@sayed.com",
+    "name": "abusayed"
   },
   {
     "title": "Research New Technologies",
     "description": "Explore and research emerging technologies for potential implementation.",
     "deadline": "2023-02-28",
     "priority": "Moderate",
-    "status": "To-Do"
+    "status": "To-Do",
+    "email": "abu@sayed.com",
+    "name": "abusayed"
   },
   {
     "title": "Prepare Budget Report",
     "description": "Compile financial data and create a budget report for the next quarter.",
     "deadline": "2023-03-10",
     "priority": "High",
-    "status": "Ongoing"
+    "status": "Ongoing",
+    "email": "abu@sayed.com",
+    "name": "abusayed"
   },
   {
     "title": "Customer Support Training",
     "description": "Organize and conduct training sessions for the customer support team.",
     "deadline": "2023-02-05",
     "priority": "Moderate",
-    "status": "Completed"
+    "status": "Completed",
+    "email": "abu@sayed.com",
+    "name": "abusayed"
   },
   {
     "title": "Review Marketing Strategy",
     "description": "Assess and review the current marketing strategy for effectiveness.",
     "deadline": "2023-02-20",
     "priority": "Low",
-    "status": "To-Do"
+    "status": "To-Do",
+    "email": "abu@sayed.com",
+    "name": "abusayed"
   },
   {
     "title": "Implement Security Updates",
     "description": "Apply the latest security updates to ensure data protection.",
     "deadline": "2023-03-01",
     "priority": "High",
-    "status": "Ongoing"
+    "status": "Ongoing",
+    "email": "abu@sayed.com",
+    "name": "abusayed"
   },
   {
     "title": "Team Building Event",
     "description": "Plan and organize a team-building event for the company staff.",
     "deadline": "2023-02-12",
     "priority": "Low",
-    "status": "Completed"
+    "status": "Completed",
+    "email": "abu@sayed.com",
+    "name": "abusayed"
   },
   {
     "title": "Optimize Website Performance",
     "description": "Identify and implement optimizations to enhance website performance.",
     "deadline": "2023-03-15",
     "priority": "Moderate",
-    "status": "To-Do"
+    "status": "To-Do",
+    "email": "abu@sayed.com",
+    "name": "abusayed"
   }
 ]
