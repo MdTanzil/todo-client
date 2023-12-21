@@ -15,7 +15,7 @@ const DashBoardLayout = () => {
             <DashBoardNav setSelectedIndex={setSelectedIndex}></DashBoardNav>
         <div className="divider divider-primary ">  </div>
             <div className="mt-20">
-                <Outlet context={selectedIndex}> </Outlet>
+                <Outlet context={[selectedIndex,setSelectedIndex]}> </Outlet>
             </div>
         </div></>
     );
