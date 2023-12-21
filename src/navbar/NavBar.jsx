@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 
 
-const NavBar = () => {
+const NavBar = ({setSelectedIndex}) => {
     return (
         <div className="navbar bg-transparent sticky">
         <div className="flex-1">

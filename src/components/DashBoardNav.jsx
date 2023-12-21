@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 // import React from 'react';
 
 import useAuth from "../hooks/useAuth";
@@ -5,7 +6,8 @@ import { RiCalendarTodoFill } from "react-icons/ri";
 import { TfiWrite } from "react-icons/tfi";
 import { IoIosDoneAll } from "react-icons/io";
 import { MdDashboardCustomize } from "react-icons/md";
-const DashBoardNav = () => {
+import { Link } from "react-router-dom";
+const DashBoardNav = ({setSelectedIndex}) => {
   const { user } = useAuth();
   console.log(user);
   return (
@@ -34,20 +36,23 @@ const DashBoardNav = () => {
           </h5>
         </div>
         <nav className="flex flex-col gap-1 min-w-[240px] p-2 font-sans text-base font-normal text-gray-700">
-          <div
+         <Link to={'/dashboard/'}>
+         <div
             role="button"
             tabIndex="0"
-            className="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all hover:bg-blue-50 hover:bg-opacity-80 focus:bg-blue-50 focus:bg-opacity-80 active:bg-gray-50 active:bg-opacity-80 hover:text-blue-900 focus:text-blue-900 active:text-blue-900 outline-none"
+            className="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all hover:bg-blue-50 hover:bg-opacity-80      hover:text-blue-900
+                    outline-none"
           >
             <div className="grid place-items-center mr-4">
             <MdDashboardCustomize />
             </div>
             Dashboard
-          </div>
+          </div></Link>
           <div
             role="button"
             tabIndex="0"
-            className="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all hover:bg-blue-50 hover:bg-opacity-80 focus:bg-blue-50 focus:bg-opacity-80 active:bg-gray-50 active:bg-opacity-80 hover:text-blue-900 focus:text-blue-900 active:text-blue-900 outline-none"
+            onClick={()=> setSelectedIndex(0)}
+            className="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all hover:bg-blue-50 hover:bg-opacity-80         hover:text-blue-900            outline-none"
           >
             <div className="grid place-items-center mr-4">
             <RiCalendarTodoFill />
@@ -57,7 +62,8 @@ const DashBoardNav = () => {
           <div
             role="button"
             tabIndex="0"
-            className="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all hover:bg-blue-50 hover:bg-opacity-80 focus:bg-blue-50 focus:bg-opacity-80 active:bg-gray-50 active:bg-opacity-80 hover:text-blue-900 focus:text-blue-900 active:text-blue-900 outline-none"
+            onClick={()=> setSelectedIndex(1)}
+            className="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all hover:bg-blue-50 hover:bg-opacity-80         hover:text-blue-900            outline-none"
           >
             <div className="grid place-items-center mr-4">
             <TfiWrite />
@@ -66,8 +72,9 @@ const DashBoardNav = () => {
           </div>
           <div
             role="button"
+            onClick={()=> setSelectedIndex(2)}
             tabIndex="0"
-            className="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all hover:bg-blue-50 hover:bg-opacity-80 focus:bg-blue-50 focus:bg-opacity-80 active:bg-gray-50 active:bg-opacity-80 hover:text-blue-900 focus:text-blue-900 active:text-blue-900 outline-none"
+            className="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all hover:bg-blue-50 hover:bg-opacity-80         hover:text-blue-900            outline-none"
           >
             <div className="grid place-items-center mr-4">
             <IoIosDoneAll />
@@ -75,15 +82,14 @@ const DashBoardNav = () => {
             Done
           </div>
          
-           
-           
+
             
           
          
           <div
             role="button"
             tabIndex="0"
-            className="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all hover:bg-blue-50 hover:bg-opacity-80 focus:bg-blue-50 focus:bg-opacity-80 active:bg-blue-50 active:bg-opacity-80 hover:text-blue-900 focus:text-blue-900 active:text-blue-900 outline-none"
+            className="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all hover:bg-blue-50 hover:bg-opacity-80           hover:text-blue-900         outline-none"
           >
             <div className="grid place-items-center mr-4">
               <svg
