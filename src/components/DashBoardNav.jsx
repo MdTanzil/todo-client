@@ -8,7 +8,9 @@ import { IoIosDoneAll } from "react-icons/io";
 import { MdDashboardCustomize } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+
 const DashBoardNav = ({setSelectedIndex}) => {
+
   const { user,logout } = useAuth();
 
   const handleLogout= ()=>{

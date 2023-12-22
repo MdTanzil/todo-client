@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosCustom = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "https://todo-server-wheat.vercel.app",
   timeout: 1000,
 });
 
