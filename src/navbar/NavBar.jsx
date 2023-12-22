@@ -1,9 +1,21 @@
 import { NavLink } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import Swal from "sweetalert2";
 
 
-const NavBar = ({setSelectedIndex}) => {
-  const {user}= useAuth()
+const NavBar = () => {
+  const {user,logout}= useAuth()
+  const handleLogout= ()=>{
+    logout().then(()=>{
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "LogOut Success",
+        showConfirmButton: false,
+        timer: 1500
+      });
+    })
+  }
     return (
         <div className="navbar bg-transparent sticky">
         <div className="flex-1">
@@ -14,7 +26,7 @@ const NavBar = ({setSelectedIndex}) => {
             <li><NavLink to={'/'}>Home</NavLink></li>
             <li><NavLink to={'/dashboard'}>DashBoard</NavLink></li>
             {
-              user ? <li className=""> <button className="btn btn-ghost">LogOut</button></li> : <li className=""><NavLink to={'/login'}>Login</NavLink></li>
+              user ? <li className=""> <button className="btn btn-ghost" onClick={()=> handleLogout()}>LogOut</button></li> : <li className=""><NavLink to={'/login'}>Login</NavLink></li>
             }
 
           </ul>

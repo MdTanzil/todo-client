@@ -1,10 +1,39 @@
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from './../hooks/useAuth';
 // import axios from "axios";
-
+import { FaGoogle } from "react-icons/fa";
+import Swal from "sweetalert2";
 const Register = () => {
-    const {register:reg,updateUserData} = useAuth()
+    const {register:reg,updateUserData,signInWithGoogle} = useAuth()
     const navigate = useNavigate()
+    const handleGoogleLogin = ()=>{
+      signInWithGoogle()
+      .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+     
+       
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Login Success",
+          showConfirmButton: false,
+          timer: 1500
+        });
+        navigate("/");
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        // // The email of the user's account used.
+        // const email = error.customData.email;
+        // // The AuthCredential type that was used.
+        // const credential = GoogleAuthProvider.credentialFromError(error);
+        // ...
+       
+  
+  
+      });
+    }
+  
     const handleSubmit =(e)=>{
         e.preventDefault();
         const email = e.target.email.value
@@ -26,6 +55,13 @@ const Register = () => {
                   
           
             //   })
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "Register Successfully",
+              showConfirmButton: false,
+              timer: 1500
+            });
               
               navigate("/");
       
@@ -129,6 +165,8 @@ const Register = () => {
                   </Link>
                 </p>
               </form>
+          <button className="btn  btn-info w-2/3 mx-auto" onClick={() =>handleGoogleLogin()}> <FaGoogle /> LogIn With Google</button>
+
             </div>
           </div>
         </div>

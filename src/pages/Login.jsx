@@ -1,9 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
-
+import { FaGoogle } from "react-icons/fa";
+import Swal from "sweetalert2";
 const Login = () => {
-  const {login,setUser} = useAuth()
+  const {login,setUser ,signInWithGoogle} = useAuth()
   const navigate = useNavigate()
 
   const handleSubmit = (e)=>{
@@ -14,13 +15,44 @@ const Login = () => {
     .then((userCredential)=>{
       const user = userCredential.user;
       setUser(user);
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Login Successfully",
+        showConfirmButton: false,
+        timer: 1500
+      });
       navigate(location?.state ? location.state : "/");
     })
-
-
-
-
   }
+  const handleGoogleLogin = ()=>{
+    signInWithGoogle()
+    .then((result) => {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+   
+     
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Login Success",
+        showConfirmButton: false,
+        timer: 1500
+      });
+      navigate("/");
+    })
+    .catch((error) => {
+      // Handle Errors here.
+      // // The email of the user's account used.
+      // const email = error.customData.email;
+      // // The AuthCredential type that was used.
+      // const credential = GoogleAuthProvider.credentialFromError(error);
+      // ...
+     
+
+
+    });
+  }
+
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className=" ">
@@ -57,9 +89,10 @@ const Login = () => {
               </label>
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-primary" type="submit">Login</button>
+              <button className="btn btn-accent" type="submit">Login</button>
             </div>
           </form>
+          <button className="btn  btn-info w-2/3 mx-auto" onClick={() =>handleGoogleLogin()}> <FaGoogle /> LogIn With Google</button>
           <p className="text-center my-4"> Don't have an account <Link to={'/register'} className="text-accent font-semibold ">Register  now</Link>  </p>
         </div>
       </div>

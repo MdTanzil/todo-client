@@ -241,6 +241,8 @@ const DashBoardHome = () => {
                   </div>
                   <p>{task.description}</p>
                   <p>Deadline: {task.deadline}</p>
+                  <p>Status: {task.status}</p>
+
 
                   <div className="card-actions justify-end">
                     <button
@@ -272,6 +274,8 @@ const DashBoardHome = () => {
                   </div>
                   <p>{task.description}</p>
                   <p>Deadline: {task.deadline}</p>
+                  <p>Status: {task.status}</p>
+
 
                   <div className="card-actions justify-end">
                     <button
@@ -303,6 +307,7 @@ const DashBoardHome = () => {
                   </div>
                   <p>{task.description}</p>
                   <p>Deadline: {task.deadline}</p>
+                  <p>Status: {task.status}</p>
 
                   <div className="card-actions justify-end">
                     <button

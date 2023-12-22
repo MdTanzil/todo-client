@@ -7,9 +7,22 @@ import { TfiWrite } from "react-icons/tfi";
 import { IoIosDoneAll } from "react-icons/io";
 import { MdDashboardCustomize } from "react-icons/md";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 const DashBoardNav = ({setSelectedIndex}) => {
-  const { user } = useAuth();
-  console.log(user);
+  const { user,logout } = useAuth();
+
+  const handleLogout= ()=>{
+    logout().then(()=>{
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "LogOut Success",
+        showConfirmButton: false,
+        timer: 1500
+      });
+    })
+  }
+  // console.log(user);
   return (
     // <!-- component -->
     <div>
@@ -79,7 +92,7 @@ const DashBoardNav = ({setSelectedIndex}) => {
             <div className="grid place-items-center mr-4">
             <IoIosDoneAll />
             </div>
-            Done
+            Completed
           </div>
          
 
@@ -87,6 +100,7 @@ const DashBoardNav = ({setSelectedIndex}) => {
           
          
           <div
+            onClick={()=> handleLogout()}
             role="button"
             tabIndex="0"
             className="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all hover:bg-blue-50 hover:bg-opacity-80           hover:text-blue-900         outline-none"

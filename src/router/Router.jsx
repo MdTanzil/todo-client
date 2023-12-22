@@ -5,6 +5,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import DashBoardLayout from "../layouts/DashBoardLayout";
 import DashBoardHome from "../pages/DashBoard/DashBoardHome";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
     element: <DashBoardLayout></DashBoardLayout>,
     children:[{
       path: '',
-      element: <DashBoardHome></DashBoardHome>
+      element:<PrivateRoute> <DashBoardHome></DashBoardHome></PrivateRoute>
     },]
   },
 

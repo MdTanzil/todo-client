@@ -1,10 +1,9 @@
 /* eslint-disable react/prop-types */
-import { Navigate, useLocation } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
 const PrivateRoute = ({children}) => {
     const { user, loading } = useAuth();
-    const location = useLocation();
     if(loading){
         return <div className="progress w-56"></div>
     }
@@ -12,7 +11,7 @@ const PrivateRoute = ({children}) => {
         return children;
     }
     return (
-        <Navigate to="/login" state={{from: location}} replace></Navigate>
+        <Navigate to="/login" ></Navigate>
     );
 };
 
